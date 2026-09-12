@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug: Transcribe",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\main.py",
+            "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "transcribe",
+                "${workspaceFolder}\\output\\【古早切片】张云杰即兴唱鸡你太美，照例还要来一段自我吹嘘.wav"
+            ]
+        },
+        {
+            "name": "Debug: Clip",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\main.py",
+            "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "clip",
+                "兰花指捻红尘似水"
+            ]
+        },
+        {
+            "name": "Debug: Merge",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\main.py",
+            "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "merge",
+                "${workspaceFolder}\\output\\clips\\拿什么来还.wav",
+                "${workspaceFolder}\\output\\clips\\天地人自万物可见啊.wav",
+            ]
+        }
+    ]
+}

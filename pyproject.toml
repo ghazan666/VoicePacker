@@ -1,0 +1,50 @@
+[project]
+name = "voicepackmaker"
+version = "0.1.0"
+description = "A minimal FunASR speech recognition example"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "funasr[silero]>=1.4.14",
+    "yt-dlp>=2025.1.15",
+]
+
+[dependency-groups]
+cpu = [
+    "torch==2.10.0",
+    "torchaudio==2.10.0",
+]
+cu130 = [
+    "torch==2.10.0",
+    "torchaudio==2.10.0",
+]
+
+[tool.uv]
+default-groups = ["cpu"]
+conflicts = [
+    [
+        { group = "cpu" },
+        { group = "cu130" },
+    ],
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", group = "cpu" },
+    { index = "pytorch-cu130", group = "cu130" },
+]
+torchaudio = [
+    { index = "pytorch-cpu", group = "cpu" },
+    { index = "pytorch-cu130", group = "cu130" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
